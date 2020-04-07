@@ -1,10 +1,6 @@
-#import time
-
-#from led import LED
 from motor import motor
 from lives import lives
 from button import button
-#from joystick import joystick
 
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
