@@ -34,10 +34,10 @@ class robot:
         self.moveMotor.move_right()
         
     # Funcitons regarding punching
-    def punch(self): # Crude punching of just moving the arm 90 degrees back and forth
+    def punch(self): # Crude punching of just moving the arm 180 degrees back and forth
         #@TODO update punching
-        self.punchMotor.move_left_deg(180)
-        self.punchMotor.move_right_deg(180)
+        self.punchMotor.move_left_deg(90)
+        self.punchMotor.move_right_deg(90)
         
 '''
 test = robot([1,2,3,4],[5,6,7,8],[9,10],11)
