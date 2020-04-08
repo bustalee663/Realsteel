@@ -13,7 +13,8 @@ class lives:
         self.led2.on()
         
     def update(self):
-        self.count = self.count - 1
+        if self.count >= 1:
+            self.count = self.count - 1
         if (self.count == 3):
             self.led1.on()
             self.led2.on()
@@ -26,4 +27,10 @@ class lives:
         elif(self.count == 0):
             self.led1.off()
             self.led2.off()
+            
+    def reset(self):
+        self.count = 3
+        self.led1.on()
+        self.led2.on()
+        
             # Coordinate with the robots if the lives.count == 0 then game over
