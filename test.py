@@ -9,18 +9,21 @@ from button import button
 
 # 4 punch motor pins, 4 move pins, 2 life pins, 1 hit pin, 2 joy pins, 1 punch pin
 
-punchButton = button(16)
-hitButton = button(12)
-testJoy = joystick([21,20])
-testLives = lives([23,24])
+player1 = user([6,13,19,26],[12,16,20,21],[3,2],7,[15,18],24)
+player2 = user([11,0,5,1],[27,22,10,9],[17,4],23,[8,25],14)
 
-moveMotor = motor([5,6,13,19])
-punchMotor = motor([25,8,7,1])
-
-testRobot = robot([25,8,7,1],[5,6,13,19],[23,24],12)
-testuser = user([25,8,7,1],[5,6,13,19],[23,24],12,[21,20],16)
-
-while testuser.get_lives() > 0:
-    testuser.punch()
-    testuser.move()
-    testuser.is_hit()
+while True:
+    print("Player 1 punch")
+    player1.robot.punchMotor.move_left_deg(50)
+    '''
+    sleep(1)
+    print("Player 2 punch")
+    player2.robot.punchMotor.move_right_deg(90)
+    sleep(1)
+    print("Player 1 move")
+    player1.robot.moveMotor.move_left_deg(90)
+    sleep(1)
+    print("Player 2 move")
+    player2.robot.moveMotor.move_left_deg(90)
+    '''
+    break
