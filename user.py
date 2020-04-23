@@ -34,6 +34,7 @@ class user:
             self.punch()
             self.move()
             self.is_hit()
+            sleep(0.001)
     
 '''
     def move_left(self):

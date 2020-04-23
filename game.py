@@ -3,11 +3,6 @@ import time
 from user import user
 import RPi.GPIO as GPIO
 
-from threading import Thread
-import time
-from user import user
-import RPi.GPIO as GPIO
-
 # 4 punch motor pins, 4 move pins, 2 life pins, 1 hit pin, 2 joy pins, 1 punch pin
 
 def game(player1, player2):
@@ -41,31 +36,6 @@ def main():
     t2 = Thread(target=game, args=(player2, player1))
     t2.start()
     game(player1, player2)
-    
-if __name__=="__main__":
-    main()
-
-
-def game(player):
-    global player1
-    global player2
-    while True:
-        while True:
-            player.user_input()
-            if player.get_lives() == 0:
-                break
-        player1.victory = True
-        player2.victory = True
-        time.sleep(5)
-        player1.robot.lives.reset()
-        player2.robot.lives.reset()
-        player1.victory = False
-        player2.victory = False
-        
-def main():
-    #t2 = Thread(target=game, args=(player1,))
-    #t2.start()
-    game(player2)
     
 if __name__=="__main__":
     main()
